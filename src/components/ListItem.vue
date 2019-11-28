@@ -4,6 +4,7 @@
 
 <script>
 import {eventBus} from '../main.js'
+import BeerDetail from './BeerDetail.vue'
 
 export default {
   name: 'list-item',

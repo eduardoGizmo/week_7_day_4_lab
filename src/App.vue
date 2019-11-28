@@ -7,6 +7,9 @@
     <div>
       <beer-detail :beerToShow="selectedBeer"></beer-detail>
     </div>
+    <div>
+      <favourites-list :favourites="favourites"></favourites-list>
+    </div>
   </div>
 </template>
 
@@ -14,13 +17,16 @@
 import {eventBus} from './main.js';
 import BeersList from './components/BeersList.vue';
 import BeerDetail from './components/BeerDetail.vue';
+import FavouritesList from './components/FavouritesList.vue';
+import FavouriteListItem from './components/FavouriteListItem.vue';
 
 export default {
   name: 'app',
   data(){
     return {
       beers: [],
-      selectedBeer: null
+      selectedBeer: null,
+      favourites: []
     };
   },
 mounted(){
@@ -31,10 +37,15 @@ mounted(){
   eventBus.$on('beer-selected', (beer) => {
     this.selectedBeer = beer;
   })
+  eventBus.$on('favourite-selected', (favourite) => {
+    this.favourites.push(favourite);
+  })
 },
 components: {
   "beers-list": BeersList,
-  "beer-detail": BeerDetail
+  "beer-detail": BeerDetail,
+  "favourites-list": FavouritesList,
+  "favourite-list-item": FavouriteListItem
 }
 }
 </script>
