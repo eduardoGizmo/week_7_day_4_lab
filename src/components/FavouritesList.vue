@@ -20,4 +20,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+ul[data-v-c655e250] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    /* align-items: center; */
+    justify-content: center;
+}
 </style>

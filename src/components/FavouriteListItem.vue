@@ -1,6 +1,7 @@
 <template lang="html">
   <div v-if="favourite">
-      <h1>{{favourite.name}}</h1>
+      <h3>{{favourite.name}}</h3>
+      <h3>Alcoholic Content: {{favourite.abv}}</h3>
   </div>
 </template>
 
@@ -12,4 +13,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  div {
+    border: black dotted 2px;
+    margin: 0 5px;
+    padding: 5px;
+  }
 </style>
